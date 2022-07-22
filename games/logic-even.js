@@ -1,9 +1,7 @@
-import { getRandomInRange } from '../src/index.js';
-import { getPlayerName } from '../src/index.js';
 import readlineSync from 'readline-sync';
+import { getRandomInRange, playerName } from '../src/index.js';
 
 const evenGame = () => {
-    playerName();
   for (let i = 0; i < 3; i += 1) {
     const number = getRandomInRange(0, 100);
     console.log('Question:', number); // eslint-disable-line no-console
