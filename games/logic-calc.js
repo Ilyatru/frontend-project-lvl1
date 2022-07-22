@@ -2,6 +2,7 @@ import readlineSync from 'readline-sync';
 import { getRandomInRange, playerName } from '../src/index.js';
 
 const calcGame = () => {
+  console.log('What is the result of the expression?'); // eslint-disable-line no-console
   for (let i = 0; i < 3; i += 1) {
     const firstNumber = getRandomInRange(0, 100);
     const secondNumber = getRandomInRange(0, 100);
