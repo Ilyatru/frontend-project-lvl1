@@ -4,7 +4,7 @@ import { getRandomInRange, playerName } from '../src/index.js';
 const progressionGame = () => {
   console.log('What number is missing in the progression?'); // eslint-disable-line no-console
   for (let i = 0; i < 3; i += 1) {
-    let progression = [];
+    const progression = [];
     progression[0] = getRandomInRange(0, 10);
     const difference = getRandomInRange(0, 10);
     const missingElementIndex = getRandomInRange(0, 9);
@@ -15,7 +15,7 @@ const progressionGame = () => {
     }
     const correctAnswer = progression[missingElementIndex];
     progression[missingElementIndex] = '..';
-    let strProgression = progression.join(' ');
+    const strProgression = progression.join(' ');
     console.log('Question:', strProgression); // eslint-disable-line no-console
     const answer = readlineSync.question('Your answer: ');
 

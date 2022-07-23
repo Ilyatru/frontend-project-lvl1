@@ -6,9 +6,8 @@ const gcdGame = () => {
   for (let i = 0; i < 3; i += 1) {
     const firstNumber = getRandomInRange(1, 100);
     const secondNumber = getRandomInRange(1, 100);
-    let correctAnswer;
-    let firstDivArr = [];
-    let secondDivArr = [];
+    const firstDivArr = [];
+    const secondDivArr = [];
 
     for (let i1 = 1; i1 <= firstNumber; i1 += 1) {
       if (firstNumber % i1 === 0) {
@@ -21,8 +20,8 @@ const gcdGame = () => {
       }
     }
 
-    const commonDiv = [...new Set(firstDivArr)].filter(item => secondDivArr.includes(item));
-    correctAnswer = commonDiv[commonDiv.length - 1];
+    const commonDiv = [...new Set(firstDivArr)].filter((item) => (secondDivArr.includes(item)));
+    const correctAnswer = commonDiv[commonDiv.length - 1];
 
     console.log('Question:', firstNumber, secondNumber); // eslint-disable-line no-console
     const answer = readlineSync.question('Your answer: ');
