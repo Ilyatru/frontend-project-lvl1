@@ -4,7 +4,7 @@ import { getRandomInRange, playerName } from '../src/index.js';
 const primeGame = () => {
   console.log('Answer "yes" if given number is prime. Otherwise answer "no".'); // eslint-disable-line no-console
   for (let i = 0; i < 3; i += 1) {
-    let divisorsArr = [];
+    const divisorsArr = [];
     const number = getRandomInRange(2, 100);
     let correctAnswer;
 
