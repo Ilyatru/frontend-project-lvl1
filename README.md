@@ -10,3 +10,5 @@ https://asciinema.org/a/508357
 https://asciinema.org/a/510317
 
 https://asciinema.org/a/510342
+
+https://asciinema.org/a/510432
