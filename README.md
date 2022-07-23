@@ -5,6 +5,8 @@
 
 https://asciinema.org/a/505508
 
-https://asciinema.org/a/xb7zbdfQ8wTz1KJJC5nC1yHHm
+https://asciinema.org/a/508357
 
-https://asciinema.org/a/goRVdpP3lyJDxxDij3XYjKUBf
+https://asciinema.org/a/510317
+
+https://asciinema.org/a/510342
