@@ -4,8 +4,8 @@ import { getRandomInRange, playerName } from '../src/index.js';
 const gcdGame = () => {
   console.log('Find the greatest common divisor of given numbers.'); // eslint-disable-line no-console
   for (let i = 0; i < 3; i += 1) {
-    const firstNumber = getRandomInRange(0, 100);
-    const secondNumber = getRandomInRange(0, 100);
+    const firstNumber = getRandomInRange(1, 100);
+    const secondNumber = getRandomInRange(1, 100);
     let correctAnswer;
     let firstDivArr = [];
     let secondDivArr = [];
