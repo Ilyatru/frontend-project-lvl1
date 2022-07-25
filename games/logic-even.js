@@ -10,7 +10,7 @@ const evenGame = () => {
     const answer = readlineSync.question('Your answer: ');
     const checkYes = (number % 2 === 0) && (answer === 'yes');
     const checkNo = (number % 2 !== 0) && (answer === 'no');
-    if ((checkYes === true) || (checkNo === true)) {
+    if (checkYes || checkNo) {
       console.log('Correct!');
     } else {
       const correctAnswer = (answer === 'yes' ? 'no' : 'yes');
