@@ -13,19 +13,19 @@ const calcGame = () => {
 
     if (mathSymbolNumber === 0) {
       mathSymbol = '+';
-      correctAnswer = Number(firstNumber) + Number(secondNumber);
+      correctAnswer = +firstNumber + +secondNumber;
     } else if (mathSymbolNumber === 1) {
       mathSymbol = '-';
-      correctAnswer = Number(firstNumber) - Number(secondNumber);
+      correctAnswer = +firstNumber - +secondNumber;
     } else {
       mathSymbol = '*';
-      correctAnswer = Number(firstNumber) * Number(secondNumber);
+      correctAnswer = +firstNumber * +secondNumber;
     }
 
     console.log('Question:', firstNumber, mathSymbol, secondNumber);
     const answer = readlineSync.question('Your answer: ');
 
-    if (Number(answer) === correctAnswer) {
+    if (+answer === correctAnswer) {
       console.log('Correct!');
     } else {
       console.log(`"${answer}" is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
