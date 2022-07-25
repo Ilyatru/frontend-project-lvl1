@@ -1,8 +1,9 @@
+/* eslint-disable no-console */
 import readlineSync from 'readline-sync';
 import { getRandomInRange, playerName } from '../src/index.js';
 
 const calcGame = () => {
-  console.log('What is the result of the expression?'); // eslint-disable-line no-console
+  console.log('What is the result of the expression?');
   for (let i = 0; i < 3; i += 1) {
     const firstNumber = getRandomInRange(0, 100);
     const secondNumber = getRandomInRange(0, 100);
@@ -21,17 +22,17 @@ const calcGame = () => {
       correctAnswer = Number(firstNumber) * Number(secondNumber);
     }
 
-    console.log('Question:', firstNumber, mathSymbol, secondNumber); // eslint-disable-line no-console
+    console.log('Question:', firstNumber, mathSymbol, secondNumber);
     const answer = readlineSync.question('Your answer: ');
 
     if (Number(answer) === correctAnswer) {
-      console.log('Correct!'); // eslint-disable-line no-console
+      console.log('Correct!');
     } else {
-      console.log(`"${answer}" is wrong answer ;(. Correct answer was '${correctAnswer}'.`); // eslint-disable-line no-console
-      console.log(`Let's try again, ${playerName}!`); // eslint-disable-line no-console
+      console.log(`"${answer}" is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
+      console.log(`Let's try again, ${playerName}!`);
       return;
     }
-  } console.log(`Congratulations, ${playerName}!`); // eslint-disable-line no-console
+  } console.log(`Congratulations, ${playerName}!`);
 };
 
 export default calcGame;

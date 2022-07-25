@@ -1,8 +1,9 @@
+/* eslint-disable no-console */
 import readlineSync from 'readline-sync';
 import { getRandomInRange, playerName } from '../src/index.js';
 
 const progressionGame = () => {
-  console.log('What number is missing in the progression?'); // eslint-disable-line no-console
+  console.log('What number is missing in the progression?');
   for (let i = 0; i < 3; i += 1) {
     const progression = [];
     progression[0] = getRandomInRange(0, 10);
@@ -16,17 +17,17 @@ const progressionGame = () => {
     const correctAnswer = progression[missingElementIndex];
     progression[missingElementIndex] = '..';
     const strProgression = progression.join(' ');
-    console.log('Question:', strProgression); // eslint-disable-line no-console
+    console.log('Question:', strProgression);
     const answer = readlineSync.question('Your answer: ');
 
     if (Number(answer) === correctAnswer) {
-      console.log('Correct!'); // eslint-disable-line no-console
+      console.log('Correct!');
     } else {
-      console.log(`"${answer}" is wrong answer ;(. Correct answer was '${correctAnswer}'.`); // eslint-disable-line no-console
-      console.log(`Let's try again, ${playerName}!`); // eslint-disable-line no-console
+      console.log(`"${answer}" is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
+      console.log(`Let's try again, ${playerName}!`);
       return;
     }
-  } console.log(`Congratulations, ${playerName}!`); // eslint-disable-line no-console
+  } console.log(`Congratulations, ${playerName}!`);
 };
 
 export default progressionGame;
