@@ -9,10 +9,10 @@ const evenGame = () => {
     const answer = readlineSync.question('Your answer: ');
     const checkYes = (number % 2 === 0) && (answer === 'yes');
     const checkNo = (number % 2 !== 0) && (answer === 'no');
+    const correctAnswer = (answer === 'yes' ? 'no' : 'yes');
     if (checkYes || checkNo) {
       console.log('Correct!');
     } else {
-      const correctAnswer = (answer === 'yes' ? 'no' : 'yes');
       console.log(`"${answer}" is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
       console.log(`Let's try again, ${playerName}!`);
       return;
