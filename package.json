@@ -2,7 +2,7 @@
   "name": "@hexlet/code",
   "version": "1.0.0",
   "type": "module",
-  "description": "[![Actions Status](https://github.com/Ilyatru/frontend-project-lvl1/workflows/hexlet-check/badge.svg)](https://github.com/Ilyatru/frontend-project-lvl1/actions)",
+  "description": "«Игры разума» — набор из пяти консольных игр по три раунда. При неправильном ответе игра завершается Игры: «Проверка на чётность», «Калькулятор», «НОД», «Арифметическая прогрессия», «Простое ли число?».",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -32,9 +32,6 @@
     "eslint": "^8.18.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-airbnb-base": "^15.0.0",
-    "eslint-plugin-import": "^2.26.0",
-    "eslint-plugin-jsx-a11y": "^6.6.0",
-    "eslint-plugin-react": "^7.30.1",
-    "eslint-plugin-react-hooks": "^4.6.0"
+    "eslint-plugin-import": "^2.26.0"
   }
 }
