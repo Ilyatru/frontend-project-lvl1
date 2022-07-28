@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
 import readlineSync from 'readline-sync';
-import { getRandomInRange, playerName } from '../src/index.js';
+import { getRandomInRange, playerName } from '../index.js';
 
 const evenGame = () => {
   console.log('Answer "yes" if the number is even, otherwise answer "no".');
