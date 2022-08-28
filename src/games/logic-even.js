@@ -1,17 +1,13 @@
-import gameEngine from '../index.js';
+import makeCommonActions from '../index.js';
+import getRandomInRange from '../helpers.js';
 
 const gameDescription = 'Answer "yes" if the number is even, otherwise answer "no".';
-const getRandomInRange = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
 const isEven = (someNumber) => someNumber % 2 === 0;
 
-const roundLogic = () => {
-  const number = getRandomInRange(0, 100);
-  const correctAnswer = (isEven(number)) ? 'yes' : 'no';
-  return [number, correctAnswer];
+const makeRound = () => {
+  const question = getRandomInRange(0, 100);
+  const correctAnswer = (isEven(question)) ? 'yes' : 'no';
+  return [question, correctAnswer];
 };
 
-const evenGame = () => {
-  gameEngine(gameDescription, roundLogic);
-};
-
-export default evenGame;
+export default () => makeCommonActions(gameDescription, makeRound);
