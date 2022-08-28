@@ -19,7 +19,7 @@ const makeRound = () => {
     mathSymbol = '*';
     correctAnswer = +firstNumber * +secondNumber;
   }
-  const question = `${firstNumber}${mathSymbol}${secondNumber}`;
+  const question = `${firstNumber} ${mathSymbol} ${secondNumber}`;
 
   return [question, correctAnswer.toString()];
 };
