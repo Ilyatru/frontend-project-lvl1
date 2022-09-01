@@ -4,7 +4,7 @@ import getRandomInRange from '../helpers.js';
 const gameDescription = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 const isPrime = (someNumber) => {
   const divisorsArr = [];
-  for (let y = 3; y < someNumber; y += 1) {
+  for (let y = 2; y < someNumber; y += 1) {
     if (someNumber % y === 0) {
       divisorsArr.push(y);
     }
