@@ -1,9 +1,12 @@
-import makeCommonActions from '../index.js';
+import generateGame from '../index.js';
 import getRandomInRange from '../helpers.js';
 
 const gameDescription = 'What is the result of the expression?';
+const correctAnswerIfAddition = (a, b) => a + b;
+const correctAnswerIfSubtraction = (a, b) => a - b;
+const correctAnswerIfMultiplication = (a, b) => a * b;
 
-const makeRound = () => {
+const generateRound = () => {
   const firstNumber = getRandomInRange(0, 100);
   const secondNumber = getRandomInRange(0, 100);
   const mathSymbolNumber = getRandomInRange(0, 2);
@@ -11,17 +14,17 @@ const makeRound = () => {
   let correctAnswer;
   if (mathSymbolNumber === 0) {
     mathSymbol = '+';
-    correctAnswer = +firstNumber + +secondNumber;
+    correctAnswer = correctAnswerIfAddition(firstNumber, secondNumber);
   } else if (mathSymbolNumber === 1) {
     mathSymbol = '-';
-    correctAnswer = +firstNumber - +secondNumber;
+    correctAnswer = correctAnswerIfSubtraction(firstNumber, secondNumber);
   } else {
     mathSymbol = '*';
-    correctAnswer = +firstNumber * +secondNumber;
+    correctAnswer = correctAnswerIfMultiplication(firstNumber, secondNumber);
   }
   const question = `${firstNumber} ${mathSymbol} ${secondNumber}`;
 
   return [question, correctAnswer.toString()];
 };
 
-export default () => makeCommonActions(gameDescription, makeRound);
+export default () => generateGame(gameDescription, generateRound);

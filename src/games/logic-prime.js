@@ -1,4 +1,4 @@
-import makeCommonActions from '../index.js';
+import generateGame from '../index.js';
 import getRandomInRange from '../helpers.js';
 
 const gameDescription = 'Answer "yes" if given number is prime. Otherwise answer "no".';
@@ -15,10 +15,10 @@ const isPrime = (someNumber) => {
   } return true;
 };
 
-const makeRound = () => {
+const generateRound = () => {
   const question = getRandomInRange(2, 100);
   const correctAnswer = (isPrime(question)) ? 'yes' : 'no';
   return [question, correctAnswer];
 };
 
-export default () => makeCommonActions(gameDescription, makeRound);
+export default () => generateGame(gameDescription, generateRound);
