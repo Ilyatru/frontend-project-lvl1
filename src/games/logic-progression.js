@@ -20,7 +20,7 @@ const generateRound = () => {
   const difference = getRandomInRange(0, 10);
   const progression = generateProgression(firstNumber, difference);
   const missingElementIndex = getRandomInRange(0, 9);
-  const correctAnswer = progression[missingElementIndex + 1] - difference;
+  const correctAnswer = progression[missingElementIndex];
   progression[missingElementIndex] = '..';
   const question = progression.join(' ');
 
