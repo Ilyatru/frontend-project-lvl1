@@ -2,26 +2,27 @@ import generateGame from '../index.js';
 import getRandomInRange from '../helpers.js';
 
 const gameDescription = 'What is the result of the expression?';
-const correctAnswerIfAddition = (a, b) => a + b;
-const correctAnswerIfSubtraction = (a, b) => a - b;
-const correctAnswerIfMultiplication = (a, b) => a * b;
+
+const calculator = (firstNumber, secondNumber, mathSymbolNumber) => {
+  let mathSymbol = '*';
+  let correctAnswer = firstNumber * secondNumber;
+
+  if (mathSymbolNumber === 0) {
+    mathSymbol = '+';
+    correctAnswer = firstNumber + secondNumber;
+  } else if (mathSymbolNumber === 1) {
+    mathSymbol = '-';
+    correctAnswer = firstNumber - secondNumber;
+  }
+
+  return [mathSymbol, correctAnswer];
+};
 
 const generateRound = () => {
   const firstNumber = getRandomInRange(0, 100);
   const secondNumber = getRandomInRange(0, 100);
   const mathSymbolNumber = getRandomInRange(0, 2);
-  let mathSymbol;
-  let correctAnswer;
-  if (mathSymbolNumber === 0) {
-    mathSymbol = '+';
-    correctAnswer = correctAnswerIfAddition(firstNumber, secondNumber);
-  } else if (mathSymbolNumber === 1) {
-    mathSymbol = '-';
-    correctAnswer = correctAnswerIfSubtraction(firstNumber, secondNumber);
-  } else {
-    mathSymbol = '*';
-    correctAnswer = correctAnswerIfMultiplication(firstNumber, secondNumber);
-  }
+  const [mathSymbol, correctAnswer] = calculator(firstNumber, secondNumber, mathSymbolNumber);
   const question = `${firstNumber} ${mathSymbol} ${secondNumber}`;
 
   return [question, correctAnswer.toString()];

@@ -2,7 +2,7 @@ import generateGame from '../index.js';
 import getRandomInRange from '../helpers.js';
 
 const gameDescription = 'What number is missing in the progression?';
-const generateProgression = (firstNumber, commonDifference, missingElementIndex) => {
+const generateProgression = (firstNumber, commonDifference) => {
   const progression = [];
   progression[0] = firstNumber;
   const progressionLength = 10;
@@ -12,17 +12,16 @@ const generateProgression = (firstNumber, commonDifference, missingElementIndex)
     progression.push(progressionElement);
   }
 
-  progression[missingElementIndex] = '..';
-
   return progression;
 };
 
 const generateRound = () => {
   const firstNumber = getRandomInRange(0, 10);
   const difference = getRandomInRange(0, 10);
+  const progression = generateProgression(firstNumber, difference);
   const missingElementIndex = getRandomInRange(0, 9);
-  const progression = generateProgression(firstNumber, difference, missingElementIndex);
-  const correctAnswer = +progression[missingElementIndex + 1] - difference;
+  const correctAnswer = progression[missingElementIndex + 1] - difference;
+  progression[missingElementIndex] = '..';
   const question = progression.join(' ');
 
   return [question, correctAnswer.toString()];

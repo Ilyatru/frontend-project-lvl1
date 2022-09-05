@@ -10,15 +10,15 @@ const findGCD = (firstNumber, secondNumber) => {
     if (firstNumber % i1 === 0) {
       divisorsArr.push(i1);
     }
-  } // Добавили в массив делителей делители первого числа
+  }
   for (let i2 = 1; i2 <= secondNumber; i2 += 1) {
     if (secondNumber % i2 === 0) {
       divisorsArr.push(i2);
     }
-  } // Добавили в массив делителей делители второго числа
+  }
 
   const compareNumbers = (a, b) => a - b;
-  const sortedDivisorsArr = divisorsArr.sort(compareNumbers); // Расставили делители по возрастанию
+  const sortedDivisorsArr = divisorsArr.sort(compareNumbers);
 
   let greatCommonDivider;
 
