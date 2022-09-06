@@ -4,15 +4,16 @@ import getRandomInRange from '../helpers.js';
 const gameDescription = 'What is the result of the expression?';
 
 const calculator = (firstNumber, secondNumber, mathSymbolNumber) => {
-  let mathSymbol = '*';
-  let correctAnswer = firstNumber * secondNumber;
+  let mathSymbolsColl = ['+', '-', '*'];
+  let mathSymbol = mathSymbolsColl[0];
+  let correctAnswer = firstNumber + secondNumber;
 
   if (mathSymbolNumber === 0) {
-    mathSymbol = '+';
-    correctAnswer = firstNumber + secondNumber;
-  } else if (mathSymbolNumber === 1) {
-    mathSymbol = '-';
+    mathSymbol = mathSymbolsColl[1];
     correctAnswer = firstNumber - secondNumber;
+  } else if (mathSymbolNumber === 1) {
+    mathSymbol = mathSymbolsColl[2];
+    correctAnswer = firstNumber * secondNumber;
   }
 
   return [mathSymbol, correctAnswer];
