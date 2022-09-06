@@ -4,7 +4,7 @@ import getRandomInRange from '../helpers.js';
 const gameDescription = 'What is the result of the expression?';
 
 const calculator = (firstNumber, secondNumber, mathSymbolNumber) => {
-  let mathSymbolsColl = ['+', '-', '*'];
+  const mathSymbolsColl = ['+', '-', '*'];
   let mathSymbol = mathSymbolsColl[0];
   let correctAnswer = firstNumber + secondNumber;
 
