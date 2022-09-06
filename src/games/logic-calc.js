@@ -5,14 +5,15 @@ const gameDescription = 'What is the result of the expression?';
 
 const calculator = (firstNumber, secondNumber, mathSymbolNumber) => {
   const mathSymbolsColl = ['+', '-', '*'];
-  let mathSymbol = mathSymbolsColl[0];
+  const [plus, minus, multiplication] = mathSymbolsColl;
+  let mathSymbol = plus;
   let correctAnswer = firstNumber + secondNumber;
 
   if (mathSymbolNumber === 0) {
-    mathSymbol = mathSymbolsColl[1];
+    mathSymbol = minus;
     correctAnswer = firstNumber - secondNumber;
   } else if (mathSymbolNumber === 1) {
-    mathSymbol = mathSymbolsColl[2];
+    mathSymbol = multiplication;
     correctAnswer = firstNumber * secondNumber;
   }
 
